@@ -1,0 +1,195 @@
+@import "custom-variables";
+
+/*SIDEBAR MENU CLOSE STYLE START*/
+.wrapper{
+	&.menu-close{
+		.sidebar{
+			left: -375px;
+		}
+		.content{
+			padding-left: 0;
+		}
+		.content-body{
+			padding-left: 0;
+		}
+		.nav-tabs{
+			padding: 0 15px;
+		}
+		.breadcrumb, .product-view{
+			padding-left: 0;
+		}
+	}
+}
+
+/*SIDEBAR MENU CLOSE STYLE END*/
+
+/*HEADER STYLE START*/
+header{
+	height: $headerHeight;
+	background: $headerBg;
+		.navbar-brand{
+			font-size: 1.8em;
+		    // background: $navbarBrandBg;
+		   	background: rgba(100,163,155,1);
+			background: -moz-linear-gradient(-45deg, rgba(100,163,155,1) 0%, rgba(100,163,155,1) 7%, rgba(84,164,153,1) 16%, rgba(84,164,153,1) 27%, rgba(48,161,140,1) 60%, rgba(38,151,131,1) 100%);
+			background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(100,163,155,1)), color-stop(7%, rgba(100,163,155,1)), color-stop(16%, rgba(84,164,153,1)), color-stop(27%, rgba(84,164,153,1)), color-stop(60%, rgba(48,161,140,1)), color-stop(100%, rgba(38,151,131,1)));
+			background: -webkit-linear-gradient(-45deg, rgba(100,163,155,1) 0%, rgba(100,163,155,1) 7%, rgba(84,164,153,1) 16%, rgba(84,164,153,1) 27%, rgba(48,161,140,1) 60%, rgba(38,151,131,1) 100%);
+			background: -o-linear-gradient(-45deg, rgba(100,163,155,1) 0%, rgba(100,163,155,1) 7%, rgba(84,164,153,1) 16%, rgba(84,164,153,1) 27%, rgba(48,161,140,1) 60%, rgba(38,151,131,1) 100%);
+			background: -ms-linear-gradient(-45deg, rgba(100,163,155,1) 0%, rgba(100,163,155,1) 7%, rgba(84,164,153,1) 16%, rgba(84,164,153,1) 27%, rgba(48,161,140,1) 60%, rgba(38,151,131,1) 100%);
+			background: linear-gradient(135deg, rgba(100,163,155,1) 0%, rgba(100,163,155,1) 7%, rgba(84,164,153,1) 16%, rgba(84,164,153,1) 27%, rgba(48,161,140,1) 60%, rgba(38,151,131,1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#64a39b', endColorstr='#269783', GradientType=1 );
+		    color: $navbarBrandColor;
+		    width: $navbarBrandWidth;
+		    height: $headerHeight;
+			padding-left: 64px;
+		    	span{
+		    		text-align: left;
+		    	}
+		}
+		.sidebar-toggle-wrap{
+			float: left;
+			padding: 8px 30px; 
+				.sidebar-toggle{
+					width: $sidebarToggleBtnWidth;
+					height: $sidebarToggleBtnHeight;
+					border: 1px solid $sidebarToggleBtnBorderColor;
+					background: $sidebarToggleBtnBg;
+					-webkit-box-shadow: 1px 1px 0px #70ada8 inset, -1px -1px 0 #70ada8 inset;
+					box-shadow: 1px 1px 0px #70ada8 inset, -1px -1px 0 #70ada8 inset;
+					padding: 8px 10px;
+					border-radius: 2px;
+					cursor: pointer;
+						span{
+							width: 26px;
+							height: 2px;
+							background: #bce1da;
+							display: block;
+								& + span{
+									margin-top: 4px;
+								}
+						}
+				}
+		}
+		.header-info{
+			width: calc(100% - 375px);
+			background: $headerInfoBg;
+			height: 41px;
+			float: right;
+			padding-left: 30px;
+				span{
+					text-transform: uppercase;
+					color: #fff;
+					font-size: 1.8em;
+						span{
+							font-family: 'roboto_condensedbold';
+							font-size: 1.28em;
+						}
+				}
+				& > span{
+					margin-right: 40px;
+				}
+		}
+}
+/*HEADER STYLE END*/
+
+/*MAIN STYLE START*/
+main{
+	padding-top: $headerHeight;
+		.sidebar{
+			width: $sidebarWidth;
+			// background: $sidebarBg;
+			background: rgba(107,173,163,1);
+			background: -moz-linear-gradient(-45deg, rgba(107,173,163,1) 0%, rgba(107,173,163,1) 10%, rgba(84,164,153,1) 27%, rgba(84,164,153,1) 48%, rgba(48,161,140,1) 72%, rgba(25,163,129,1) 100%);
+			background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(107,173,163,1)), color-stop(10%, rgba(107,173,163,1)), color-stop(27%, rgba(84,164,153,1)), color-stop(48%, rgba(84,164,153,1)), color-stop(72%, rgba(48,161,140,1)), color-stop(100%, rgba(25,163,129,1)));
+			background: -webkit-linear-gradient(-45deg, rgba(107,173,163,1) 0%, rgba(107,173,163,1) 10%, rgba(84,164,153,1) 27%, rgba(84,164,153,1) 48%, rgba(48,161,140,1) 72%, rgba(25,163,129,1) 100%);
+			background: -o-linear-gradient(-45deg, rgba(107,173,163,1) 0%, rgba(107,173,163,1) 10%, rgba(84,164,153,1) 27%, rgba(84,164,153,1) 48%, rgba(48,161,140,1) 72%, rgba(25,163,129,1) 100%);
+			background: -ms-linear-gradient(-45deg, rgba(107,173,163,1) 0%, rgba(107,173,163,1) 10%, rgba(84,164,153,1) 27%, rgba(84,164,153,1) 48%, rgba(48,161,140,1) 72%, rgba(25,163,129,1) 100%);
+			background: linear-gradient(135deg, rgba(107,173,163,1) 0%, rgba(107,173,163,1) 10%, rgba(84,164,153,1) 27%, rgba(84,164,153,1) 48%, rgba(48,161,140,1) 72%, rgba(25,163,129,1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6bada3', endColorstr='#19a381', GradientType=1 );
+			height: 100vh;
+			position: fixed;
+			top: $headerHeight;
+			left: 0;
+			-webkit-transition: left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+		    -o-transition: left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+		    transition: left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+		    	.sidebar-nav{
+		    		padding: 30px 0 0 65px;
+		    			li{
+		    				margin-bottom: 30px;
+		    					a{
+		    						color: $sidebarNavLinkColor;
+		    						font-size: 1.6em;
+		    					}
+		    			}
+		    	}
+		}
+}
+
+/*GENERAL CONTENT STYLE START*/
+.content{
+	width: 100%;
+	padding-left: $sidebarWidth;
+	background: $contentBg;
+	margin-top: 22px;
+	-webkit-transition: padding-left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+    -o-transition: padding-left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+    transition: padding-left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+}
+
+
+// user-info start
+.user-info{
+	padding-left: 15px;
+		.user-img{
+			@include size(105px, 105px);
+		}
+		.user-desqription{
+			text-transform: uppercase;
+			h6{
+				color: $generaCyanlColor;
+				font-size: 1.4em;
+				text-shadow: 0 0;
+				line-height: 1.2;
+					span{
+						display: block;
+					}	
+			}
+			ul{
+				margin-top: 25px;
+					li{
+						color: $generaCyanlColor;
+						font-size: 1.4em;
+						text-shadow: 0 0;
+						& + li{
+							margin-top: 20px;
+						}
+					}
+			}
+		}
+		.user-amount{
+			ul{
+				li{
+					font-size: 1.4em;
+					& + li{
+						margin-top: 30px;
+					}
+					span{
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+}
+.enroll-doctor{
+	padding-left: 15px;
+	margin-top: 22px;
+}
+
+// user-info end
+/*GENERAL CONTENT STYLE END*/
+
+/*MAIN STYLE END*/
+
+/*MEDIA STYLE*/
+@import "media";

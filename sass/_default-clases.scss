@@ -1,0 +1,322 @@
+@import "custom-variables";
+*{
+  -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    transition: all .3s linear;
+}
+// класс для віравнивани любого блока по вертикали
+.vertical-align {
+  &:before {
+    display: inline-block;
+    content: '';
+    height: 100%;
+    vertical-align: middle;
+    margin-left:-5px;
+  }
+  & > *{
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+// TITLE STYLE
+
+// DISABLED ELEMENT STYLE
+%disabled{
+  background: $btnDisabledBg;
+  color: $generalGreyColor;
+  cursor: not-allowed;
+  opacity: 0.65;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.disabled{
+  @extend %disabled;
+}
+*[disabled]{
+  @extend %disabled;
+}
+
+#buyer_grid_pager_right{
+  font-size: 1.2em;
+  font-family: $generalFont;
+  margin-top: 10px;
+  line-height: 1.3;
+}
+
+// BTN STYLE
+.btn{
+  font-size: 1.6em;
+  padding: 0px 12px;
+  border-radius: $btnBorderRadius;
+  font-family: $generalFont;
+  text-transform: uppercase;
+  color: $btnColor;
+  line-height: $btnBigHeight - 2px;
+  border-width: $borderWidth;
+  @include size($btnBigWidth, $btnBigHeight);
+
+    &:active{
+      color: $btnColor;
+    }
+    &:before{
+      content: "";
+      display: inline-block;
+    }
+    // кнопка с иконкой
+    &.w-icon{
+        &:before{
+          background: url(images/sprite-icon.png);
+          margin-right: 10px;
+          vertical-align: middle;
+        }
+    }
+    // стандартная синяя кнопка
+    // &.btn-default{
+    //   background: $btnDefaultBg;
+    //   border-color: $btnBorderColor;
+    //     &:hover{
+    //       background: $btnDefaultHoverBg;
+    //       border-color: $btnHoverBorderColor;
+    //       color: $btnColor;
+    //     }
+    //     &:focus{
+    //       color: $btnColor;
+    //         &:active{
+    //           color: $btnColor;
+    //           background: $btnDefaultBg;
+    //           border-color: $btnBorderColor;
+    //       }
+    //     } 
+    // }
+
+    // кнопка на всю ширину
+    &.full-wdth{
+      width: 100%;
+    }
+    // неактивная кнопка
+    &.disabled{
+      background: $btnDisabledBg;
+      color: $generalGreyColor;
+      border-color: $btnDisabledBorder;
+        &:hover{
+          background: $btnDisabledBg;
+          color: $generalGreyColor;
+          border-color: $btnDisabledBorder;
+        }
+        &:focus{
+          background: $btnDisabledBg;
+          color: $generalGreyColor;
+          border-color: $btnDisabledBorder;
+        }
+        &:focus:active{
+          background: $btnDisabledBg;
+          color: $generalGreyColor;
+          border-color: $btnDisabledBorder;
+        }
+    }
+}
+.button{
+  @extend .btn;
+  @extend .btn-default;
+}
+.button-place{
+  padding: 10px 0;
+}
+.btn{
+  
+  &.btn-buy{
+    &:before{
+      width: 16px;
+      height: 16px;
+      background-position: 0 0;
+      vertical-align: bottom;
+    }
+  }
+  &.btn-booking{
+    &:before{
+      width: 16px;
+      height: 16px;
+      background-position: 0 -16px;
+      vertical-align: bottom;
+    }
+  }
+  &.save-btn{
+    &:before{
+      width: 13px;
+      height: 15px;
+      background-position: 0 -80px;
+    }
+  }
+  &.realization-btn{
+    &:before{
+      width: 13px;
+      height: 15px;
+      background-position: 0 -95px;
+    }
+  }
+  &.delete-btn{
+    &:before{
+      width: 13px;
+      height: 13px;
+      background-position: 0 -110px;
+
+    }
+  }
+}
+
+//input style
+.form-group{
+  position: relative;
+}
+.form-control, input[type="text"], input[type="date"], input[type="number"], select, textarea{
+  border-radius: 0;
+  border: $borderWidth solid $inputBorderColor;
+  font-size: 1.6em;
+  color: $inputTextColor;
+  font-family: $generalFont;
+  @include size($inputWdth ,$inputHeight);
+  padding: 15px 7px 0 7px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+    &[readonly]{
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      padding-left: 0;
+      font-size: 2.4em;
+      // color: $inputRandomColor;
+        &:focus{
+          border-color: transparent;
+          outline: 0;
+          box-shadow: none;
+        }
+    }
+    &:focus{
+      border-color: #66afe9;
+      outline: 0;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    }
+    &.disabled{
+        @extend %disabled;
+        &:hover{
+          @extend %disabled;
+        }
+        &:focus{
+          @extend %disabled;
+        }
+        &:active{
+          @extend %disabled;
+        }
+    }
+    &[disabled]{
+      @extend %disabled;
+    }
+}
+select{
+  padding-left: 3px;
+}
+
+
+
+// форма в линию
+.form-inline{
+  .form-group{
+    width: 100%;
+      .form-control, input[type="text"], select, textarea, label{
+        width: 100%;
+      }
+  }
+  .checkbox{
+    label{
+      padding-left: 34px;
+    }
+  }
+} 
+label{
+  font-size: $generalFontSize;
+  font-family: $generalFont;
+  color: $labelColor;
+  font-weight: normal;
+  white-space: nowrap;
+    & span{
+      display: block;
+      font-size: 1.1em;
+      text-transform: uppercase;
+      position: absolute;
+      top: 7px;
+      left: 9px;
+    }
+}
+
+// стили для чекбокса
+// .checkbox{
+//   input[type="checkbox"]{
+//     width: 100%;
+//     position: absolute !important;
+//     top: 0;
+//     -webkit-z-index: 99;
+//     -moz-z-index: 99;
+//     -ms-z-index: 99;
+//     -o-z-index: 99;
+//     z-index: 99;
+//      -webkit-appearance: none;
+//     -moz-appearance: none;
+//     -o-appearance:none;
+//     appearance: none;
+//     background: transparent;
+//     border: none;
+//     -webkit-box-shadow: none;
+//     box-shadow: none;
+//     cursor: pointer;
+//     opacity: 0;
+//       &:checked{
+//         & + label{
+//             &:before{
+//               background: url(images/checkbox-check.png) no-repeat center;
+//             } 
+//         }
+//       }
+//       &.disabled, &[disabled]{
+//         & + label{
+//           &:before{
+//             background: $btnDisabledBg;
+//           } 
+//         }
+//         &:hover, &:active, &:focus{
+//           background: transparent;
+//           cursor: not-alowed;
+//         }
+//       }
+//   }
+// label{
+//   display: inline-block;
+//   color: $inputTextColor;
+//   font-size: 1.4em;
+//   line-height: 18px;
+//   width: 164px;
+//   padding-left: 34px;
+//   white-space: normal;
+//   text-transform: none;
+//   position: relative;
+//     &:before{
+//       content:"";
+//       display: inline-block;
+//       position: absolute;
+//       width: 26px;
+//       height: 26px;
+//       border: 2px solid $checkboxBorderColor;
+//       left: 0;
+//       top: 50%;
+//       margin-top: -13px;
+//       background: transparent;
+//       border-radius: 3px;
+//     }
+
+// } 
+//}
